@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g minify
+      - run: brew install yuicompressor
       - run: |
           shopt -s globstar
           for f in assets/**/*.css
           do
-            minify $f > $f.min
+            yuicompressor $f > $f.min
             mv $f.min $f
           done
       - uses: peaceiris/actions-gh-pages@v3
