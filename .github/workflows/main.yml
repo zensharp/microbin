@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: brew install yuicompressor
+      - run: npm install -g yuicompressor
       - run: |
           shopt -s globstar
           for f in assets/**/*.css
