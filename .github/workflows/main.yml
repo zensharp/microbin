@@ -11,7 +11,7 @@ jobs:
       - run: npm install -g yuicompressor
       - run: |
           shopt -s globstar
-          for f in assets/**/*.css
+          for f in **/*.css
           do
             yuicompressor $f > $f.min
             mv $f.min $f
